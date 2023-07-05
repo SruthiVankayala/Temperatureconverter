@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Temperature Converter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color:#d2f7f7;
+    }
+    
+    .input-group {
+      margin-bottom: 10px;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    
+    input[type="text"] {
+      width: 100%;
+      padding: 5px;
+      font-size: 16px;
+    }
+    
+  button {
+      padding: 8px 16px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Temperature Converter</h2>
+    <div class="input-group">
+      <label for="fahrenheit">Fahrenheit:</label>
+      <input type="text" id="fahrenheit">
+    </div>
+    <div class="input-group">
+      <label for="celsius">Celsius:</label>
+      <input type="text" id="celsius">
+    </div>
+    <div class="input-group">
+      <label for="kelvin">Kelvin:</label>
+      <input type="text" id="kelvin">
+    </div>
+    <button onclick="convert()">Convert</button>
+  </div>
+
+  <script>
+    function convert() {
+      var fahrenheitInput = document.getElementById("fahrenheit");
+      var celsiusInput = document.getElementById("celsius");
+      var kelvinInput = document.getElementById("kelvin");
+
+      var fahrenheit = parseFloat(fahrenheitInput.value);
+      var celsius = (fahrenheit - 32) * 5 / 9;
+      var kelvin = celsius + 273.15;
+ celsiusInput.value = celsius.toFixed(2);
+      kelvinInput.value = kelvin.toFixed(2);
+    }
+  </script>
+</body>
+</html>
